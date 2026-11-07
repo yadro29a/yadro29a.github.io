@@ -1,0 +1,262 @@
+# 日本語 UI 文字列。テーマは en.toml / zh.toml しか持たないので、サイト側で追加している。
+# テーマを更新したら themes/void/i18n/en.toml と差分を取り、増えたキーをここにも足すこと。
+
+# フッター
+[footer_share_knowledge]
+other = "知識と経験、そして考えたことの記録"
+
+[footer_navigation]
+other = "ナビゲーション"
+
+[footer_stay_connected]
+other = "連絡先"
+
+[footer_subscribe_contact]
+other = "購読・ご連絡はこちらから"
+
+[footer_contact_me]
+other = "連絡する"
+
+[footer_github]
+other = "GitHub"
+
+[footer_zhihu]
+other = "Zhihu"
+
+[footer_email]
+other = "メール"
+
+[footer_rights_reserved]
+other = "All Rights Reserved"
+
+[footer_built_with]
+other = "Built with"
+
+[footer_built]
+other = "構築"
+
+[footer_theme]
+other = "テーマ"
+
+[footer_total_visits]
+other = "総訪問数"
+
+# メインナビゲーション
+[nav_home]
+other = "ホーム"
+
+[nav_posts]
+other = "記事"
+
+[nav_categories]
+other = "カテゴリ"
+
+[nav_tags]
+other = "タグ"
+
+[nav_about]
+other = "このサイトについて"
+
+[skip_to_content]
+other = "本文へスキップ"
+
+# トップページ
+[home_recent_posts]
+other = "最近の記事"
+
+[home_view_all_posts]
+other = "すべての記事を見る"
+
+[home_welcome]
+other = "ようこそ"
+
+# 一覧ページ
+[list_read_more]
+other = "続きを読む"
+
+[year_indicator]
+other = "年"
+
+[decorative_halo]
+other = "装飾"
+
+[article_list]
+other = "記事一覧"
+
+[list_view_by_year]
+other = "年別"
+
+[list_view_by_category]
+other = "カテゴリ別"
+
+[list_article_count]
+other = "全 {{ .Count }} 件"
+
+[all_posts]
+other = "すべての記事"
+
+# About ページ
+[about_skills]
+other = "スキル"
+
+[about_experience]
+other = "経歴"
+
+[about_education]
+other = "学歴"
+
+[about_projects]
+other = "プロジェクト"
+
+[about_interests]
+other = "興味"
+
+[about_contact]
+other = "連絡先"
+
+# 記事ページ
+[reading_time]
+other = "分で読めます"
+
+[page_views]
+other = "閲覧数"
+
+[back_to_home]
+other = "ホームに戻る"
+
+[last_updated]
+other = "最終更新"
+
+[post_previous]
+other = "前の記事"
+
+[post_next]
+other = "次の記事"
+
+[tags_label]
+other = "タグ"
+
+# 日付書式（Go の time レイアウト。参照時刻は 2006-01-02）
+[date_month_day_format]
+other = "1月2日"
+
+[date_year]
+other = ""
+
+# タグ
+[tag_icon_title]
+other = "タグ"
+
+[all_tags]
+other = "すべてのタグ"
+
+[tags_help_text]
+other = "タグをクリックすると関連記事が表示されます"
+
+[categories_help_text]
+other = "カテゴリをクリックすると記事の一覧が開閉します"
+
+[articles]
+other = "件"
+
+# 共通
+[back_to_top]
+other = "ページ先頭へ"
+
+[search_placeholder]
+other = "検索..."
+
+[pagination_next]
+other = "次へ"
+
+[pagination_previous]
+other = "前へ"
+
+[pagination_page]
+other = "{{ .PageNumber }} ページ目"
+
+[related_posts]
+other = "関連記事"
+
+[table_of_contents]
+other = "目次"
+
+# 共有
+[share]
+other = "共有"
+
+[share_copy_link]
+other = "リンクをコピー"
+
+[share_copy_summary]
+other = "要約をコピー"
+
+[share_copied]
+other = "コピーしました"
+
+[share_native]
+other = "共有..."
+
+[share_copy_link_success]
+other = "リンクをコピーしました。"
+
+[share_copy_summary_success]
+other = "共有用テキストをコピーしました。"
+
+[share_copy_failed]
+other = "コピーに失敗しました。"
+
+[share_native_failed]
+other = "この環境では共有機能を利用できません。"
+
+# コメント
+[comments]
+other = "コメント"
+
+[load_comments]
+other = "コメントを読み込む"
+
+[loading_comments]
+other = "コメントを読み込んでいます…"
+
+[comments_load_failed]
+other = "コメントを読み込めませんでした。ネットワークで Disqus がブロックされている可能性があります。"
+
+[retry]
+other = "再試行"
+
+# 404
+[not_found_title]
+other = "ページが見つかりません"
+
+[not_found_body]
+other = "お探しのページは存在しないか、移動しました。"
+
+# シリーズ
+[series]
+other = "シリーズ"
+
+[series_part_of]
+other = "このシリーズの記事"
+
+[series_help_text]
+other = "複数回に分けた記事を読む順に並べています"
+
+[all_series]
+other = "すべてのシリーズ"
+
+# 検索（Pagefind）
+[search]
+other = "検索"
+
+[search_unavailable]
+other = "検索インデックスはデプロイ時に生成されるため、このビルドでは利用できません。"
+
+[search_zero_results]
+other = "[SEARCH_TERM] に一致する記事はありません"
+
+[search_clear]
+other = "クリア"
+
+[search_load_more]
+other = "さらに読み込む"

@@ -1,22 +1,21 @@
 +++
-title       = 'Hello World'
+title       = 'このブログについて'
 date        = 2026-11-07
 draft       = false
-description = 'Why this blog exists and what it will cover.'
+description = 'このブログで何を書いていくかの覚書。'
 categories  = ['meta']
 tags        = ['meta']
 +++
 
-This is where I write up the security work I would otherwise lose in a scratch
-file: how a bug class actually works, how to reproduce it in a lab, and which
-mitigation survives contact with production.
+調べたことをそのまま手元のメモで腐らせるのが惜しくなったので、ここに書くことにしました。
+あるバグ分類が実際にはどう動くのか、どうすれば手元の環境で再現できるのか、そしてどの
+対策が実運用で効くのか、という順で書いていきます。
 
-Planned topics:
+扱う予定のテーマ:
 
-- **Web security** — authentication, CSP, request smuggling, SSRF
-- **Binary exploitation** — memory corruption, mitigation bypasses
-- **Detection engineering** — turning an attack technique into a signal
-- **CTF writeups** — the ones where I learned something transferable
+- **Web セキュリティ** — 認証、CSP、リクエストスマグリング、SSRF
+- **バイナリエクスプロイト** — メモリ破壊、緩和策の回避
+- **検知エンジニアリング** — 攻撃手法を検知可能なシグナルに落とす
+- **CTF の writeup** — 応用の効く学びがあったものだけ
 
-Everything here is for education and defensive research. See the
-[disclaimer](/disclaimer/).
+内容はすべて教育および防御的な研究を目的としています。[免責事項](/disclaimer/)もご確認ください。

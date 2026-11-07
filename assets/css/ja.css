@@ -1,0 +1,46 @@
+/* ---------------------------------------------------------------------------
+   日本語タイポグラフィ（サイト側の追加スタイル）
+
+   テーマの --font-bilingual は簡体字中国語向けのスタック
+   ("Noto Serif SC" / "Songti SC" など)。日本語を流し込むと一部の漢字が
+   中国語字形で出るため、ja ページだけ上書きする。
+   いずれも OS 標準フォントなので、ダウンロードは一切発生しない。
+   --------------------------------------------------------------------------- */
+
+html[lang^="ja"] {
+  /* 既定: ゴシック。技術文書は画面上の可読性を優先した。
+     Windows の游明朝は小サイズで線が細く沈むため、本文には使っていない。 */
+  --font-bilingual:
+    "Source Serif 4",
+    "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+    "Noto Sans JP", "Yu Gothic UI", YuGothic, "Yu Gothic",
+    Meiryo, sans-serif;
+
+  /* 明朝にしたい場合は上をコメントアウトして下を有効にする:
+  --font-bilingual:
+    "Source Serif 4",
+    "Hiragino Mincho ProN",
+    "Noto Serif JP", "Yu Mincho", YuMincho,
+    "MS PMincho", serif;
+  */
+}
+
+/* 日本語は単語間にスペースが無いので、英語より行間を広げたほうが読みやすい。 */
+html[lang^="ja"] .article-prose {
+  line-height: 1.9;
+}
+
+/* 日本語の強調は斜体ではなく傍点にする（欧文の italic は和文では機能しない）。 */
+html[lang^="ja"] .prose em {
+  font-style: normal;
+  text-emphasis: filled dot;
+  -webkit-text-emphasis: filled dot;
+  text-emphasis-position: over right;
+  -webkit-text-emphasis-position: over right;
+}
+
+/* 和文と欧文・数字の間に四分アキを入れる（対応ブラウザのみ）。 */
+html[lang^="ja"] .article-prose {
+  text-autospace: normal;
+  text-spacing-trim: trim-start;
+}

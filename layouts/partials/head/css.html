@@ -16,8 +16,24 @@
   {{ end }}
 {{ end }}
 
-{{/* Fonts are self-hosted under static/fonts/ (nothing from Google Fonts).
-     Latin faces ship inside main.css; preload the body face.
-     Site override: the Noto Serif SC (CJK) stylesheet is not loaded -- this
-     blog is English-only, which saves ~60 KB gzipped and one request. */}}
+{{/* 欧文フォントは static/fonts/ に自己ホスト（Google Fonts は一切使わない）。
+     Latin の字形は main.css に同梱されているので、本文用の 1 ファイルだけ preload する。
+     サイト側の上書き: テーマ同梱の Noto Serif SC（簡体字）は読み込まない。
+     このブログは日本語なので、中国語字形のフォントを落としても使い道がなく、
+     約 60 KB (gzip) と 1 リクエストの節約になる。和文は OS 標準フォントを使う。 */}}
 <link rel="preload" href="{{ "fonts/source-serif-4-400.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+
+{{/* コードブロックの可読性調整（assets/css/code.css）。 */}}
+{{ with resources.Get "css/code.css" }}
+  {{ $code := . }}
+  {{ if hugo.IsProduction }}{{ $code = $code | minify | fingerprint }}{{ end }}
+  <link rel="stylesheet" href="{{ $code.RelPermalink }}"{{ if hugo.IsProduction }} integrity="{{ $code.Data.Integrity }}" crossorigin="anonymous"{{ end }}>
+{{ end }}
+
+{{/* 和文タイポグラフィ（assets/css/ja.css）。OS 標準フォントの指定のみで、
+     外部リソースは増えない。 */}}
+{{ with resources.Get "css/ja.css" }}
+  {{ $ja := . }}
+  {{ if hugo.IsProduction }}{{ $ja = $ja | minify | fingerprint }}{{ end }}
+  <link rel="stylesheet" href="{{ $ja.RelPermalink }}"{{ if hugo.IsProduction }} integrity="{{ $ja.Data.Integrity }}" crossorigin="anonymous"{{ end }}>
+{{ end }}

@@ -1,0 +1,83 @@
+/* ---------------------------------------------------------------------------
+   コードブロックの可読性調整（サイト側の追加スタイル）
+
+   テーマは github-dark / github-light の Chroma パレットをそのまま使っている。
+   これは GitHub の背景色 (#0d1117 / #ffffff) 向けに作られた配色で、テーマが
+   実際に使う背景 (#0f172a / #f8fafc) だと一部のコントラストが足りない。
+   不足している箇所だけをここで上書きする。数値は WCAG のコントラスト比。
+   --------------------------------------------------------------------------- */
+
+/* --- 行番号 ------------------------------------------------------------
+   light は 2.45:1 で読めなかった。dark も 3.75:1 と基準(4.5:1)割れ。      */
+.code-block-body .highlight .ln,
+.code-block-body .highlight .lnt {
+  color: #5b6775;                   /* 5.13:1 on #eef2f7 */
+}
+
+.dark .code-block-body .highlight .ln,
+.dark .code-block-body .highlight .lnt {
+  color: #8b98ab;                   /* 6.10:1 on #0f172a */
+}
+
+/* --- 型名をキーワードから分離 ------------------------------------------
+   github パレットは k / kd / kt / kr / o をすべて同じ赤にしている。
+   C だと int, char, volatile, return, if, = がまとめて同色になり、
+   画面が赤一色で潰れる。型だけオレンジ寄りに逃がす。                      */
+.chroma .kt { color: #953800; }           /* 7.06:1 on #f8fafc */
+.dark .chroma .kt { color: #ffa657; }     /* 9.22:1 on #0f172a */
+
+/* --- 演算子を抑える ----------------------------------------------------
+   = や * がキーワードと同じ太字の赤だと、目が構文ではなく記号に向かう。  */
+.chroma .o { color: #5b6775; font-weight: normal; }
+.dark .chroma .o { color: #a3b1c2; font-weight: normal; }
+
+/* --- コメントの斜体をやめる --------------------------------------------
+   等幅フォントの斜体は合成斜体になることが多く、ずれて読みにくい。
+   日本語を含むコメントでは特に崩れる。                                    */
+.chroma .c,
+.chroma .c1,
+.chroma .cm,
+.chroma .cp,
+.chroma .cpf,
+.chroma .cs {
+  font-style: normal;
+}
+
+/* --- コードブロックを地の文から浮かせる ------------------------------
+   テーマはコードブロックの背景をページ背景とほぼ同色にしている。
+     dark : ページ #0b1220 / コード #0f172a → 1.05:1
+     light: ページ #f9fafb / コード #f8fafc → 1.00:1
+   差が無いので、細い枠線だけが境界になっていて「塊」として見えない。
+   背景を一段ずらし、枠線も見える濃さにする。                            */
+.code-block-container {
+  background-color: #eef2f7;        /* ページとの分離 1.08:1 */
+  border-color: #cbd5e1;
+}
+
+.dark .code-block-container {
+  background-color: #1e293b;        /* ページとの分離 1.28:1 */
+  border-color: #475569;
+}
+
+/* ヘッダ（言語ラベル + コピーボタン）も本体に合わせる */
+.code-block-header {
+  background-color: rgba(255, 255, 255, 0.55);
+  border-bottom-color: #cbd5e1;
+}
+
+.dark .code-block-header {
+  background-color: rgba(15, 23, 42, 0.55);
+  border-bottom-color: #475569;
+}
+
+.dark .code-block-body .highlight .lntd:first-child {
+  border-color: #475569;
+  background-color: rgba(2, 6, 23, 0.25);
+}
+
+/* --- 文字を少し大きく --------------------------------------------------
+   0.84rem = 13.4px は、日本語のコメントが混じると潰れる。               */
+.code-block-container {
+  --code-font-size: 0.92rem;        /* 14.7px */
+  --code-line-height: 1.6;
+}

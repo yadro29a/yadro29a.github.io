@@ -1,16 +1,16 @@
 +++
-title = 'Disclaimer'
+title = '免責事項'
 date = 2026-11-07
 +++
 
-Everything on this site is published for **education and defensive research**.
+このサイトの内容はすべて**教育および防御的な研究を目的**として公開しています。
 
-Techniques, payloads, and proof-of-concept code are demonstrated against systems
-I own or have written authorization to test. Running them against systems you do
-not own or have explicit permission to test is illegal in most jurisdictions.
+掲載している手法・ペイロード・検証コードは、筆者が所有しているか、書面で許可を得て
+テストしているシステムに対してのみ実行したものです。所有していない、または明示的な
+許可を得ていないシステムに対して同じことを行うのは、日本を含む多くの国で犯罪です。
 
-Views here are my own and do not represent any employer. Content is provided
-without warranty; you are responsible for what you do with it.
+記載内容は筆者個人の見解であり、所属組織を代表するものではありません。内容は無保証で
+提供されます。これをどう利用するかの責任は利用者にあります。
 
-Found something inaccurate, or need a vulnerability disclosed responsibly?
-Open an issue on the repository for this site.
+誤りを見つけた場合や、脆弱性を責任ある形で報告したい場合は、このサイトのリポジトリに
+issue を立ててください。

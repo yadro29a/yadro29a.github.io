@@ -3,11 +3,11 @@ title = 'About'
 layout = 'about'
 +++
 
-I write about how security bugs actually work: the mechanism first, then the
-exploit, then the mitigation that holds up in production.
+セキュリティのバグが実際にどう動くのかを書いています。先に仕組み、次に攻撃、
+最後に現場で通用する対策、という順序を心がけています。
 
-Mostly web security, binary exploitation, and detection engineering.
+扱うのは主に Web セキュリティ、バイナリエクスプロイト、リバースエンジニアリングです。
 
-## Elsewhere
+## リンク
 
 - GitHub: [yadro29a](https://github.com/yadro29a)

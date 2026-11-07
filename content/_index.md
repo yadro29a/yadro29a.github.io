@@ -2,4 +2,4 @@
 title = 'Home'
 +++
 
-Notes on exploitation, detection, and the internals in between.
+攻撃と防御、その間にある仕組みについての記録。

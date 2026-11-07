@@ -5,9 +5,9 @@ baseURL              = 'https://yadro29a.github.io/'
 title                = 'yadro29a'                       # <<< rename freely: header + <title>
 theme                = 'void'
 
-locale                 = 'en-US'   # Hugo >= 0.158 name for languageCode
-defaultContentLanguage = 'en'
-hasCJKLanguage         = false      # English-only blog: keeps reading-time accurate
+locale                 = 'ja'      # <html lang> / Hugo >= 0.158 name for languageCode
+defaultContentLanguage = 'ja'      # UI 文字列は i18n/ja.toml を使う
+hasCJKLanguage         = true       # 和文の読了時間を文字数ベースで計算させる
 enableRobotsTXT        = true
 timeZone               = 'Asia/Tokyo'
 summaryLength          = 40
@@ -19,7 +19,7 @@ summaryLength          = 40
 # Theme params
 # ---------------------------------------------------------------------------
 [params]
-  description = 'Deep dives into offensive and defensive security.'   # <<< site description (SEO)
+  description = 'セキュリティの仕組みを、手を動かして確かめながら解説します。'   # <<< SEO 用の説明
 
   [params.author]
     name  = 'yadro29a'                                               # <<< byline
@@ -40,32 +40,32 @@ summaryLength          = 40
 # Navigation
 # ---------------------------------------------------------------------------
 [[menus.main]]
-  name    = 'Home'
+  name    = 'ホーム'
   pageRef = '/'
   weight  = 10
 
 [[menus.main]]
-  name    = 'Posts'
+  name    = '記事'
   pageRef = '/posts'
   weight  = 20
 
 [[menus.main]]
-  name    = 'Categories'
+  name    = 'カテゴリ'
   pageRef = '/categories'
   weight  = 30
 
 [[menus.main]]
-  name    = 'Tags'
+  name    = 'タグ'
   pageRef = '/tags'
   weight  = 40
 
 [[menus.main]]
-  name    = 'Search'
+  name    = '検索'
   pageRef = '/search'
   weight  = 50
 
 [[menus.main]]
-  name    = 'About'
+  name    = 'このサイトについて'
   pageRef = '/about'
   weight  = 60
 

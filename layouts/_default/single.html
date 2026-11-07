@@ -199,5 +199,8 @@
   </aside>
   {{ end }}
   </div>{{/* .article-layout */}}
-  {{ if hugo.IsDevelopment }}{{ partial "dev/typo-panel.html" . }}{{ end }}
+  {{/* Site override: the theme shows a floating font/typography experiment
+     panel on article pages during `hugo server`. Disabled -- it covers the
+     bottom-right corner while writing. Re-enable by restoring:
+     {{ if hugo.IsDevelopment }}{{ partial "dev/typo-panel.html" . }}{{ end }} */}}
 {{ end }}
