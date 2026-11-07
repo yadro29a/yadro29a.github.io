@@ -1,0 +1,124 @@
+# ---------------------------------------------------------------------------
+# Site identity  --  EDIT THE FOUR LINES MARKED <<< BEFORE DEPLOYING
+# ---------------------------------------------------------------------------
+baseURL              = 'https://yadro29a.github.io/'
+title                = 'yadro29a'                       # <<< rename freely: header + <title>
+theme                = 'void'
+
+locale                 = 'en-US'   # Hugo >= 0.158 name for languageCode
+defaultContentLanguage = 'en'
+hasCJKLanguage         = false      # English-only blog: keeps reading-time accurate
+enableRobotsTXT        = true
+timeZone               = 'Asia/Tokyo'
+summaryLength          = 40
+
+[pagination]
+  pagerSize = 10
+
+# ---------------------------------------------------------------------------
+# Theme params
+# ---------------------------------------------------------------------------
+[params]
+  description = 'Deep dives into offensive and defensive security.'   # <<< site description (SEO)
+
+  [params.author]
+    name  = 'yadro29a'                                               # <<< byline
+    email = ''
+
+  # Uncomment once you drop an image at static/images/avatar.png
+  # [params.avatar]
+  #   url = '/images/avatar.png'
+
+  [params.social]
+    github = 'https://github.com/yadro29a'
+    # email = 'you@example.com'      # published publicly - opt in deliberately
+
+  [params.share]
+    default_image = ''               # e.g. '/images/og-default.png'
+
+# ---------------------------------------------------------------------------
+# Navigation
+# ---------------------------------------------------------------------------
+[[menus.main]]
+  name    = 'Home'
+  pageRef = '/'
+  weight  = 10
+
+[[menus.main]]
+  name    = 'Posts'
+  pageRef = '/posts'
+  weight  = 20
+
+[[menus.main]]
+  name    = 'Categories'
+  pageRef = '/categories'
+  weight  = 30
+
+[[menus.main]]
+  name    = 'Tags'
+  pageRef = '/tags'
+  weight  = 40
+
+[[menus.main]]
+  name    = 'Search'
+  pageRef = '/search'
+  weight  = 50
+
+[[menus.main]]
+  name    = 'About'
+  pageRef = '/about'
+  weight  = 60
+
+# ---------------------------------------------------------------------------
+# Taxonomies  --  'series' is required by the theme's series navigation
+# ---------------------------------------------------------------------------
+[taxonomies]
+  category = 'categories'
+  tag      = 'tags'
+  series   = 'series'
+
+# ---------------------------------------------------------------------------
+# Markdown / code / math  --  required by the theme, do not loosen
+# ---------------------------------------------------------------------------
+[markup]
+  [markup.highlight]
+    noClasses          = false   # REQUIRED: enables the dark/light Chroma palettes
+    lineNos            = true
+    lineNumbersInTable = true
+    tabWidth           = 4
+
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel   = 4
+    ordered    = false
+
+  [markup.goldmark.renderer]
+    unsafe = true                # allows raw HTML in posts
+
+  [markup.goldmark.extensions.passthrough]
+    enable = true
+    [markup.goldmark.extensions.passthrough.delimiters]
+      block  = [['$$', '$$'], ['\[', '\]']]
+      inline = [['$', '$'], ['\(', '\)']]
+
+[imaging]
+  resampleFilter = 'Lanczos'
+  [imaging.jpeg]
+    quality = 85
+  [imaging.webp]
+    quality = 85
+
+# ---------------------------------------------------------------------------
+# Comments (optional). Fill in a Disqus shortname to enable the comment box.
+# ---------------------------------------------------------------------------
+[services.disqus]
+  shortname = ''
+
+# ---------------------------------------------------------------------------
+# Hugo's exec allow-list. Required: the theme compiles its CSS with
+# css.TailwindCSS, which shells out to the Tailwind CLI from node_modules.
+# Hugo 0.169's default list does not include it. The other entries are the
+# Hugo defaults -- setting `allow` replaces the list rather than extending it.
+# ---------------------------------------------------------------------------
+[security.exec]
+  allow = ['^(dart-)?sass$', '^go$', '^git$', '^node$', '^npx$', '^postcss$', '^tailwindcss$']

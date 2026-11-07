@@ -1,0 +1,12 @@
+# Hugo
+/public/
+/resources/_gen/
+/.hugo_build.lock
+hugo_stats.json
+
+# Node
+/node_modules/
+
+# OS / editor
+Thumbs.db
+.DS_Store

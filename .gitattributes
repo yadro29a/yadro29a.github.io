@@ -1,0 +1,6 @@
+# Keep LF in the repo so the Linux CI runner and Windows checkouts agree.
+* text=auto eol=lf
+*.woff2 binary
+*.png binary
+*.jpg binary
+*.ico binary

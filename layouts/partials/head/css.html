@@ -1,0 +1,23 @@
+{{ with (templates.Defer (dict "key" "global")) }}
+  {{ with resources.Get "css/main.css" }}
+    {{ $opts := dict
+      "minify" hugo.IsProduction
+      "inlineImports" true
+    }}
+    {{ with . | css.TailwindCSS $opts }}
+      {{ if hugo.IsProduction }}
+        {{ with . | fingerprint }}
+          <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+        {{ end }}
+      {{ else }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}?v={{ now.Unix }}">
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{/* Fonts are self-hosted under static/fonts/ (nothing from Google Fonts).
+     Latin faces ship inside main.css; preload the body face.
+     Site override: the Noto Serif SC (CJK) stylesheet is not loaded -- this
+     blog is English-only, which saves ~60 KB gzipped and one request. */}}
+<link rel="preload" href="{{ "fonts/source-serif-4-400.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
