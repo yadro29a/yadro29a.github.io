@@ -40,32 +40,32 @@ summaryLength          = 40
 # Navigation
 # ---------------------------------------------------------------------------
 [[menus.main]]
-  name    = 'ホーム'
+  name    = 'Home'
   pageRef = '/'
   weight  = 10
 
 [[menus.main]]
-  name    = '記事'
+  name    = 'Posts'
   pageRef = '/posts'
   weight  = 20
 
 [[menus.main]]
-  name    = 'カテゴリ'
+  name    = 'Categories'
   pageRef = '/categories'
   weight  = 30
 
 [[menus.main]]
-  name    = 'タグ'
+  name    = 'Tags'
   pageRef = '/tags'
   weight  = 40
 
 [[menus.main]]
-  name    = '検索'
+  name    = 'Search'
   pageRef = '/search'
   weight  = 50
 
 [[menus.main]]
-  name    = 'このサイトについて'
+  name    = 'About'
   pageRef = '/about'
   weight  = 60
 
