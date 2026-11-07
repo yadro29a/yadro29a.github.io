@@ -10,3 +10,6 @@ hugo_stats.json
 # OS / editor
 Thumbs.db
 .DS_Store
+
+# Private writing notes -- never published, never committed
+/notes/
