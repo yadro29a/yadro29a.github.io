@@ -12,6 +12,10 @@ enableRobotsTXT        = true
 timeZone               = 'Asia/Tokyo'
 summaryLength          = 40
 
+# タクソノミー名を書いたとおりに表示する。既定の true だと Hugo が先頭を
+# 大文字化し、gdb -> Gdb, buffer-overflow -> Buffer-Overflow になってしまう。
+capitalizeListTitles   = false
+
 [pagination]
   pagerSize = 10
 
